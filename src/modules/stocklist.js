@@ -1,25 +1,21 @@
 import { createAction, handleActions } from "redux-actions";
 const SELECT = "stocklist/SELECT";
+const GETLIST = "stocklist/GETLIST";
+const SETOPTION = "stocklist/SETOPTION";
+const SETFILTEREDLIST = "stocklist/SETFILTEREDLIST";
+
 export const select = createAction(SELECT);
+export const getList = createAction(GETLIST);
+export const setOption = createAction(SETOPTION);
+export const setFilteredList = createAction(SETFILTEREDLIST);
 
 const initialState = {
-  list: [
-    {
-      code: "000120",
-      name: "CJ대한통운",
-      start: "154,000",
-      close: "151,500",
-      diff: "-2500",
-      checked: false,
-    },
-    {
-      code: "161580",
-      name: "필옵틱스",
-      start: "14,200",
-      close: "13,400",
-      checked: false,
-    },
-  ],
+  list: [],
+  option: {
+    code : '',
+    type : ''
+  },
+  filteredList: []
 };
 
 const stocklist = handleActions(
@@ -30,6 +26,22 @@ const stocklist = handleActions(
         item.code === id ? { ...item, checked: true } : item
       ),
     }),
+
+    [GETLIST]: (state, {payload: list}) =>({
+      ...state,
+      list : list.slice()
+    }),
+
+    [SETOPTION] : (state, {payload: poption}) => ({
+      ...state,
+      option : poption
+    }),
+
+    [SETFILTEREDLIST] : (state, {payload: list}) => ({
+      ...state,
+      filteredList : list
+    })
+    
   },
   initialState
 );

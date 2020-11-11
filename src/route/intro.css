@@ -1,0 +1,11 @@
+#textbox_div {
+    padding:1rem;
+    border: 3px solid white;
+    background-color: #ffffff1f;
+    display: inline-block;
+    position: absolute;
+    width:300px;
+    height:10%;
+    top: calc(50% - 10%);
+    left: calc(50% - 170px)
+}

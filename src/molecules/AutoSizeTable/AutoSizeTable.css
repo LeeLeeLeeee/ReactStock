@@ -1,0 +1,36 @@
+.ReactVirtualized__Grid:focus{
+    outline:none !important;
+}
+
+.ReactVirtualized__Grid:last-child{
+    border:1px solid black;
+}
+
+.Cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    font-size: 10px;
+  }
+
+.CellHead {
+    color:black;
+    font-weight: 'bold';
+}
+
+
+.Cell:hover {
+    color: rgb(0, 143, 43);
+}
+
+.column_1,
+.sortable
+{
+    cursor: pointer;
+}
+
+.sortable::after{
+    content:'↕'
+}

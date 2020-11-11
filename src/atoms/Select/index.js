@@ -1,13 +1,18 @@
+import React from 'react'
 import styled from 'styled-components'
 
-const StyledSelect = styled.select(props=>({
-  padding: props.padding || "5px",
-  margin:  "5px",
-  position:'absolute',
-  right:'5px',
-  fontWeight:'bold',
-  height:'70%'
+
+const Select = styled.select(props=>({
+  padding: props.padding || "1rem",
+  margin:  "1rem",
+  borderRadius:'5px',
 }))
 
 
-export default StyledSelect
+export default function StyledSelect({fnChange, option}){
+  return (
+    <Select onChange={fnChange}>
+      {option}
+    </Select>
+  )
+}

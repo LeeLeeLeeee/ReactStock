@@ -5,6 +5,7 @@ const StyledButton = styled.button`
   border-radius: 0.25rem;
   font-size: 1rem;
   line-height: 1.5;
+  
   border: 1px solid lightgray;
 `
 
